@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: lime;
+}
+body {
+}
+.landing-container {
+    background-image: url("/src/assets/images/landing_image.jpeg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(5rem, 5vw, 10rem);
+}
