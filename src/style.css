@@ -1,11 +1,21 @@
+@font-face {
+    font-family: "Main-font";
+    src: url(./assets/fonts/BeaufortForLoL-TTF/BeaufortforLOL-Regular.ttf);
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Main-font";
 }
+
 header {
     background-color: lime;
 }
 body {
+    display: flex;
+    flex-direction: column;
 }
 .landing-container {
     background-image: url("/src/assets/images/landing_image.jpeg");
@@ -15,4 +25,52 @@ body {
     justify-content: center;
     align-items: center;
     font-size: clamp(5rem, 5vw, 10rem);
+    font-weight: 800;
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0.2;
+    max-width: 400px;
+}
+
+button.nav-button {
+    width: -webkit-fill-available;
+    border: none;
+    height: 75px;
+    font-size: 2rem;
+    color: green;
+    font-weight: 600;
+    background-image: linear-gradient(to right, rgb(0, 0, 0, 0.2) 100%, ghostwhite 0%);
+    background-position: -400px 0;
+    background-repeat: no-repeat;
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+}
+
+
+button.nav-button:hover {
+    background-position: 0 0;
+}
+.nav,
+button.nav-button {
+    background-color: ghostwhite;
+}
+
+button.active {
+    color: black;
+}
+
+.content {
+    flex: 1;
 }
