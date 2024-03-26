@@ -8,7 +8,7 @@ export default class LandingPage {
         this.landingPage = document.createElement("div");
         this.landingPage.className = "landing-container";
         this.body.appendChild(this.landingPage);
-        this.landingPage.textContent = 'My Restaurant'
+        this.landingPage.textContent = 'Aegean Breeze'
     }
 
     removeLandingPage() {
