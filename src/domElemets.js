@@ -45,10 +45,10 @@ export default class Nav {
         }
     }
 
-    createContentContainer() {
-        this.contentContainer = document.createElement("div");
-        this.contentContainer.className = "content";
-        this.wrapper.appendChild(this.contentContainer);
+    createContentWrapper() {
+        this.contentWrapper = document.createElement("div");
+        this.contentWrapper.className = "content-wrapper";
+        this.wrapper.appendChild(this.contentWrapper);
     }
 
 
@@ -111,6 +111,6 @@ export default class Nav {
         this.createWrapper();
         this.createNav();
         this.createNavButtons();
-        this.createContentContainer();
+        this.createContentWrapper();
     }
 }
