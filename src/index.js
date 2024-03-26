@@ -17,21 +17,22 @@ body.addEventListener("click", () => {
     if (landingPage.state === true) {
         landingPage.removeLandingPage();
         nav.renderNav();
+        homePage.loadPage();
     }
 
-    if (nav.homeButton.value === '1' && homePage.state === false) {
-        homePage.getHomePage();
-        menuPage.state = false;
-        contactPage.state = false;
+    if (nav.homeButton.value === "1" && homePage.state === false) {
+        homePage.loadPage();
+        menuPage.unloadPage();
+        contactPage.unloadPage();
     }
-    if (nav.menuButton.value === '1' && menuPage.state === false) {
-        menuPage.getMenuPage();
-        homePage.state = false;
-        contactPage.state = false;
+    if (nav.menuButton.value === "1" && menuPage.state === false) {
+        menuPage.loadPage();
+        homePage.unloadPage();
+        contactPage.unloadPage();
     }
-    if (nav.contactButton.value === '1' && contactPage.state === false) {
-        contactPage.getContactPage();
-        homePage.state = false;
-        menuPage.state = false;
+    if (nav.contactButton.value === "1" && contactPage.state === false) {
+        contactPage.loadPage();
+        homePage.unloadPage();
+        menuPage.unloadPage();
     }
 });
