@@ -2,21 +2,29 @@ export default class Nav {
     body = document.querySelector("body");
     constructor() {
         this.state = false;
+    }
+
+    createWrapper() {
+        this.wrapper = document.createElement('div');
+        this.wrapper.className = "wrapper";
+        this.body.appendChild(this.wrapper);
+    }
+
+    createNav() {
         this.nav = document.createElement("nav");
+        this.nav.className = "nav";
+        this.wrapper.appendChild(this.nav);
+    }
+    createNavButtons() {
         this.homeButton = document.createElement("button");
         this.menuButton = document.createElement("button");
         this.contactButton = document.createElement("button");
-        this.contentContainer = document.createElement("div");
-    }
-    createNav() {
-        this.nav.className = "nav";
-        this.body.appendChild(this.nav);
-        this.nav.append(this.homeButton, this.menuButton, this.contactButton);
-    }
-    createNavButtons() {
+
         this.homeButton.className = "nav-button home";
         this.menuButton.className = "nav-button menu";
         this.contactButton.className = "nav-button contact";
+
+        this.homeButton.classList.add('active')
 
         this.homeButton.textContent = "Home";
         this.menuButton.textContent = "Menu";
@@ -25,6 +33,8 @@ export default class Nav {
         this.homeButton.value = 1;
         this.menuButton.value = 0;
         this.contactButton.value = 0;
+
+        this.nav.append(this.homeButton, this.menuButton, this.contactButton);
 
         const navButtons = document.getElementsByClassName("nav-button");
 
@@ -35,41 +45,59 @@ export default class Nav {
         }
     }
 
-    homeButtonValue() {
-        this.homeButton.value = this.homeButton.value === "1" ? "0" : "1";
+    createContentContainer() {
+        this.contentContainer = document.createElement("div");
+        this.contentContainer.className = "content";
+        this.wrapper.appendChild(this.contentContainer);
     }
 
-    menuButtonValue() {
-        this.menuButton.value = this.menuButton.value === "1" ? "0" : "1";
+
+
+    homeButtonState() {
+        this.homeButton.value =  '1';
+        this.menuButton.value = "0";
+        this.contactButton.value = "0";
+        this.homeButton.classList.add('active')
+        this.menuButton.classList.remove('active')
+        this.contactButton.classList.remove('active')
     }
 
-    contactButtonValue() {
-        this.contactButton.value = this.contactButton.value === "1" ? "0" : "1";
+    menuButtonState() {
+        this.menuButton.value = '1'
+        this.homeButton.value = "0";
+        this.contactButton.value = "0";
+        this.menuButton.classList.add('active');
+        this.homeButton.classList.remove('active');
+        this.contactButton.classList.remove('active');
+    }
+
+    contactButtonState() {
+        this.contactButton.value = '1';
+        this.homeButton.value = "0";
+        this.menuButton.value = "0";
+        this.contactButton.classList.add('active');
+        this.homeButton.classList.remove('active');
+        this.menuButton.classList.remove('active');
     }
 
     tabSwitcher(target) {
         switch (target) {
             case "home":
                 if (this.homeButton.value !== "1") {
-                    this.homeButtonValue();
-                    this.menuButton.value = "0";
-                    this.contactButton.value = "0";
+                    this.homeButtonState();
                 }
                 break;
 
             case "menu":
                 if (this.menuButton.value !== "1") {
-                    this.menuButtonValue();
-                    this.homeButton.value = "0";
-                    this.contactButton.value = "0";
+                    this.menuButtonState();
+                    
                 }
                 break;
 
             case "contact":
                 if (this.contactButton.value !== "1") {
-                    this.contactButtonValue();
-                    this.homeButton.value = "0";
-                    this.menuButton.value = "0";
+                    this.contactButtonState();
                 }
                 break;
 
@@ -80,7 +108,9 @@ export default class Nav {
 
     renderNav() {
         this.state = true;
+        this.createWrapper();
         this.createNav();
         this.createNavButtons();
+        this.createContentContainer();
     }
 }
