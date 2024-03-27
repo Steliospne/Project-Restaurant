@@ -107,26 +107,26 @@ button.active {
 .content-wrapper.home {
     background-image: url("/src/assets/images/home_bg.jpg");
     background-size: cover;
-    animation: fadein 1s linear;
+    /* animation: fadein 0.5s linear; */
 }
 
 .content-wrapper.menu {
     background-image: url("/src/assets/images/menu_bg.jpg");
     background-size: cover;
-    animation: fadein 1s linear;
+    /* animation: fadein 0.5s linear; */
 }
 
 .content-wrapper.contact {
     background-image: url("/src/assets/images/contact_bg.jpg");
     background-size: cover;
-    animation: fadein 1s linear;
+    /* animation: fadein 0.5s linear; */
 }
 
 .content.home,
 .content.menu,
 .content.contact {
     background-color: rgba(255, 255, 255, 0.7);
-    animation: fadein 2s ease-in-out;
+    animation: fadein 1.5s ease-in-out;
     overflow: auto;
 }
 
