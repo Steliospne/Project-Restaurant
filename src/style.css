@@ -14,6 +14,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 .landing-container {
     background-image: url("/src/assets/images/landing_image.jpeg");
     background-size: cover;
@@ -82,8 +88,8 @@ button.active {
 
 .content {
     border: 5px black solid;
-    height: 80%;
-    width: 80%;
+    height: min(80%,850px);
+    width: min(80%,850px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,11 +125,63 @@ button.active {
 .content.home,
 .content.menu,
 .content.contact {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     animation: fadein 2s ease-in-out;
+    overflow: auto;
 }
 
+.menu-header{
+    grid-area: header;
+}
+.appetizers-header{
+    grid-area: appetizers-header;
+}
 
+.image-placeholder {
+    width: 350px;
+    height: 350px;
+    border: 5px black solid;
+    margin: 10px 0 20px 0;
+}
+
+.image-placeholder.dako {
+    background-image: url('/src/assets/images/dakos.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.image-placeholder.saganaki {
+    background-image: url('/src/assets/images/saganaki.jpg');
+    background-size: cover;
+}
+.image-placeholder.octopus {
+    background-image: url('/src/assets/images/Octopus-carpaccio.jpg');
+    background-size: cover;
+}
+.image-placeholder.lamb {
+    background-image: url('/src/assets/images/lamb.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.image-placeholder.seafood {
+    background-image: url('/src/assets/images/Seafood.jpg');
+    background-size: cover;
+}
+.image-placeholder.stifado {
+    background-image: url('/src/assets/images/stifado.png');
+    background-size: cover;
+}
+.image-placeholder.moussaka {
+    background-image: url('/src/assets/images/moussaka.jpg');
+    background-size: cover;
+}
+.image-placeholder.galakt {
+    background-image: url('/src/assets/images/galaktoboureko.jpg');
+    background-size: cover;
+}
+.image-placeholder.loukouomades {
+    background-image: url('/src/assets/images/loukoumades.jpg');
+    background-size: cover;
+}
 
 @keyframes fadein {
     from {
